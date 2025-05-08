@@ -1,7 +1,7 @@
-import { getSession } from "@auth0/nextjs-auth0";
+import { getUser } from "@auth0/nextjs-auth0";
 
 export default async function ProfileServer() {
-  const session = await getSession();
+  const session = await getUser();
   const user = session?.user;
 
   if (!user) return null;

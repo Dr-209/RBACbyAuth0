@@ -13,6 +13,7 @@ export async function createAccessToken(): Promise<string> {
   try {
     const response = await axios.post<AccessTokenResponse>(
       `${process.env.AUTH0_ISSUER_BASE_URL}/oauth/token`,
+      // `${process.env.AUTH0_BASE_URL}/oauth/token`,
       new URLSearchParams({
         grant_type: "client_credentials",
         client_id: process.env.AUTH0_CLIENT_ID!,
